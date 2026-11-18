@@ -141,8 +141,28 @@ plt.tight_layout()
 plt.savefig("grafico_3_vitorias_mandante_temporada.png", dpi=150)
 plt.close()
 
+# Gráfico 4 - Distribuição do total de gols por partida
+dist_total = df["total_gols"].value_counts(normalize=True).sort_index() * 100
+fig, ax = plt.subplots(figsize=(10, 5))
+ax.bar(dist_total.index, dist_total.values, color="slateblue")
+ax.axvline(df["total_gols"].mean(), color="red", linestyle="--",
+           label=f"Média ({df['total_gols'].mean():.2f})")
+ax.axvline(df["total_gols"].median(), color="black", linestyle=":",
+           label=f"Mediana ({df['total_gols'].median():.0f})")
+ax.set_title("Distribuição do total de gols por partida")
+ax.set_xlabel("Total de gols na partida (mandante + visitante)")
+ax.set_ylabel("% das partidas")
+ax.set_xticks(dist_total.index)
+ax.legend()
+plt.tight_layout()
+plt.savefig("grafico_4_distribuicao_total_gols.png", dpi=150)
+plt.close()
+
 print("Gráficos salvos: grafico_1_distribuicao_gols.png, grafico_2_resultados_partidas.png,")
-print("                 grafico_3_vitorias_mandante_temporada.png")
+print("                 grafico_3_vitorias_mandante_temporada.png, grafico_4_distribuicao_total_gols.png")
+print("Total de gols por partida (% das partidas):")
+print(dist_total.round(1).to_string())
+print(f"Partidas com 3 gols ou mais: {(df['total_gols'] >= 3).mean() * 100:.1f}%")
 print(f"% vitórias do mandante - maior: {vit_temp.idxmax()} ({vit_temp.max():.1f}%), "
       f"menor: {vit_temp.idxmin()} ({vit_temp.min():.1f}%)")
 

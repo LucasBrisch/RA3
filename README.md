@@ -15,7 +15,7 @@ Terceira etapa (**RA3**) do projeto de Data Analytics. Utiliza a base do Campeon
 - `campeonato_brasileiro.csv`: base de dados tratada nas etapas anteriores.
 - `RA3.py`: script com a análise estatística, geração dos gráficos e o modelo de Machine Learning.
 - `requirements.txt`: dependências Python.
-- `grafico_1_distribuicao_gols.png`, `grafico_2_resultados_partidas.png`, `grafico_3_vitorias_mandante_temporada.png`: gráficos gerados pelo script.
+- `grafico_1_distribuicao_gols.png`, `grafico_2_resultados_partidas.png`, `grafico_3_vitorias_mandante_temporada.png`, `grafico_4_distribuicao_total_gols.png`: gráficos gerados pelo script.
 
 ## Instruções de Execução
 
@@ -26,7 +26,7 @@ pip install -r requirements.txt
 python RA3.py
 ```
 
-O script imprime no terminal todas as tabelas e métricas citadas abaixo e salva os três gráficos (`.png`) na pasta do projeto.
+O script imprime no terminal todas as tabelas e métricas citadas abaixo e salva os quatro gráficos (`.png`) na pasta do projeto.
 
 > Observação: o resultado de cada partida (vitória do mandante / empate / vitória do visitante) é calculado a partir do **placar**, e não da coluna `vencedor`, porque essa coluna tem 541 partidas em que o nome do vencedor está escrito diferente do nome do time (ex.: "Atletico-MG" x "Atlético-MG", "Sport" x "Sport Recife", "America-MG" x "América-MG"), o que distorceria os percentuais.
 
@@ -50,7 +50,7 @@ Variáveis analisadas: gols do mandante, gols do visitante e total de gols por p
 
 **Dispersão.** O desvio-padrão é alto em relação à média (1,23 para média de 1,54 no mandante), o que mostra que o número de gols varia bastante de jogo para jogo. A amplitude (até 8 gols) é causada por poucos jogos extremos; o intervalo entre Q1 e Q3 mostra que metade das partidas tem entre 1 e 4 gols no total.
 
-**Distribuição.** A distribuição dos gols é assimétrica à direita (concentrada em 0–2 gols e com cauda longa):
+**Distribuição.** A distribuição dos gols é assimétrica à direita (concentrada em 0–2 gols e com cauda longa; ver também o Gráfico 4):
 
 | Gols | 0 | 1 | 2 | 3 | 4 | 5+ |
 |---|---|---|---|---|---|---|
@@ -79,6 +79,11 @@ Resultados das partidas: **Vitória do mandante 49,6%**, Empate 26,4%, Vitória 
 ![Vitórias do Mandante por Temporada](grafico_3_vitorias_mandante_temporada.png)
 
 **Interpretação:** o percentual de vitórias do mandante oscila entre 43,9% (2017) e 54,7% (2008), mas em **todas** as temporadas fica bem acima da média geral de vitórias do visitante (23,9%), ou seja, o fator casa é consistente ao longo do tempo. Também se observa uma tendência de queda nas temporadas mais recentes (2019–2024 abaixo da média). Em 2020, temporada disputada sem torcida por causa da pandemia, o índice caiu para 45,0%, abaixo da média — o que é compatível com a ideia de que a torcida contribui para o fator casa, mas não prova isso, pois 2017 e 2022 tiveram valores semelhantes com público.
+
+### Gráfico 4 – Distribuição do total de gols por partida
+![Distribuição do Total de Gols](grafico_4_distribuicao_total_gols.png)
+
+**Interpretação:** o total de gols se concentra entre 1 e 4 gols (80,1% das partidas), com pico em 2 gols (24,5%). A distribuição é **assimétrica à direita**: há uma cauda de jogos com muitos gols (até 11), e por isso a média (2,56) fica acima da mediana (2). Jogos sem gols são incomuns (7,9%) e 47,2% das partidas têm 3 gols ou mais. Isso mostra que os jogos com 5 gols ou mais (cerca de 12% das partidas) puxam a média para cima, e que a mediana descreve melhor o "jogo típico".
 
 ---
 
