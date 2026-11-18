@@ -2,10 +2,10 @@
 
 Terceira etapa (**RA3**) do projeto de Data Analytics. Utiliza a base do Campeonato Brasileiro Série A (pontos corridos, 2003–2025) preparada nas etapas anteriores para realizar análise estatística descritiva, visualizações, análise de representatividade e uma aplicação de Machine Learning.
 
-# Alunos:
-## Lucas Brisch Zanlorenzi
-## Livia Rosembach Oliveira
-## Alexandre Andrioli Tucci
+## Alunos
+- Lucas Brisch Zanlorenzi
+- Livia Rosembach Oliveira
+- Alexandre Andrioli Tucci
 
 ## Problema investigado
 
@@ -66,22 +66,22 @@ Resultados das partidas: **Vitória do mandante 49,6%**, Empate 26,4%, Vitória 
 ## 2. Visualização e Interpretação dos Dados
 
 ### Gráfico 1 – Distribuição de gols por partida (mandante x visitante)
-![Distribuição de Gols](grafico_1_distribuicao_gols.png)
+![Distribuição de Gols](./grafico_1_distribuicao_gols.png)
 
 **Interpretação:** as barras do visitante são maiores em 0 e 1 gol, e as do mandante são maiores a partir de 2 gols. O visitante passa em branco em 36,3% dos jogos, contra 20,7% do mandante. A distribuição do mandante é deslocada para valores mais altos — o mandante não só vence mais, como marca mais.
 
 ### Gráfico 2 – Proporção dos resultados
-![Proporção de Resultados](grafico_2_resultados_partidas.png)
+![Proporção de Resultados](./grafico_2_resultados_partidas.png)
 
 **Interpretação:** quase metade dos jogos (49,6%) termina com vitória do mandante, enquanto empate e vitória do visitante ficam próximos (26,4% e 23,9%). É a evidência mais direta do fator casa.
 
 ### Gráfico 3 – Percentual de vitórias do mandante por temporada
-![Vitórias do Mandante por Temporada](grafico_3_vitorias_mandante_temporada.png)
+![Vitórias do Mandante por Temporada](./grafico_3_vitorias_mandante_temporada.png)
 
 **Interpretação:** o percentual de vitórias do mandante oscila entre 43,9% (2017) e 54,7% (2008), mas em **todas** as temporadas fica bem acima da média geral de vitórias do visitante (23,9%), ou seja, o fator casa é consistente ao longo do tempo. Também se observa uma tendência de queda nas temporadas mais recentes (2019–2024 abaixo da média). Em 2020, temporada disputada sem torcida por causa da pandemia, o índice caiu para 45,0%, abaixo da média — o que é compatível com a ideia de que a torcida contribui para o fator casa, mas não prova isso, pois 2017 e 2022 tiveram valores semelhantes com público.
 
 ### Gráfico 4 – Distribuição do total de gols por partida
-![Distribuição do Total de Gols](grafico_4_distribuicao_total_gols.png)
+![Distribuição do Total de Gols](./grafico_4_distribuicao_total_gols.png)
 
 **Interpretação:** o total de gols se concentra entre 1 e 4 gols (80,1% das partidas), com pico em 2 gols (24,5%). A distribuição é **assimétrica à direita**: há uma cauda de jogos com muitos gols (até 11), e por isso a média (2,56) fica acima da mediana (2). Jogos sem gols são incomuns (7,9%) e 47,2% das partidas têm 3 gols ou mais. Isso mostra que os jogos com 5 gols ou mais (cerca de 12% das partidas) puxam a média para cima, e que a mediana descreve melhor o "jogo típico".
 
