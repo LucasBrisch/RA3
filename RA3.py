@@ -12,6 +12,7 @@ Etapas:
     3. Amostragem e representatividade
     4. Machine Learning (classificação)
 """
+import os
 import pandas as pd
 import matplotlib
 
@@ -20,6 +21,9 @@ import matplotlib.pyplot as plt
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
+# Garante que o CSV seja lido e os gráficos salvos na pasta do script,
+# independentemente de onde o comando for executado
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 pd.set_option("display.width", 120)
 
 # ---------------------------------------------------------------------------
